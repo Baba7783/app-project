@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Aman Video Player</h1>
+    </header>
+    <section>
+        <video src="..//video player/WIN_20220630_19_16_00_Pro.mp4" width="100%" height="400" id="mp" controls poster="aman.jpg"></video>
+    </section>
+    <footer>
+        <button id="ubtn">
+            Upload
+            <input type="file" accept=".mp4" id="vupload" onchange="Upload()">
+        </button>
+        <button id="play" onclick="vplay()">Play</button>
+        <button id="pause" onclick="vpause()">Pause</button>
+    </footer>
+    <script>
+        function vplay()
+        {
+            var a = document.getElementById('mp');
+            a.play();
+        }
+        function vpause(){
+            var a = document.getElementById('mp');
+            a.pause();
+        }
+        function Upload()
+        {
+            var a = document.getElementById("vupload").value.replace(/.*(\/|\\)/,'');
+            var b = document.getElementById('mp');
+            b.src=a;
+
+        }
+    </script>
+</body>
+</html>
